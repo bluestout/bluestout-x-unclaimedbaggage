@@ -24,8 +24,8 @@ function FreeShippingBar() {
   const progress = Math.min((currentTotal / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const isEligible = remaining === 0;
   const message = isEligible
-    ? "Congratulations! You've unlocked free shipping!"
-    : `Almost there! Add $${remaining.toFixed(2)} to unlock`;
+    ? "You’ve got FREE shipping! (U.S. Only)"
+    : `$${remaining.toFixed(2)} to go to reach Free Shipping`;
 
   return (
     <Grid
