@@ -25,7 +25,7 @@ function FreeShippingBar() {
   const isEligible = remaining === 0;
   const message = isEligible
     ? "You’ve got FREE shipping! (U.S. Only)"
-    : `$${remaining.toFixed(2)} to go to reach Free Shipping`;
+    : `You're $${remaining.toFixed(2)} away from getting free shipping`;
 
   return (
     <Grid
@@ -38,7 +38,7 @@ function FreeShippingBar() {
     >
       <View padding="base">
         <Image
-          source="https://cdn.shopify.com/s/files/1/0959/4214/8465/files/1_4eafbfb1-12fc-421b-add4-422a37133699.png?v=1760652293&width=30"
+          source="https://cdn.shopify.com/s/files/1/0959/4214/8465/files/free_shipping.png?v=1761251317&width=50"
           fit="contain"
         />
       </View>
