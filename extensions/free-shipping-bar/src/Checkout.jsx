@@ -6,7 +6,7 @@ import {
   BlockStack,
   Progress,
   Grid,
-  useTotalAmount,
+  useSubtotalAmount,
   View,
   useSettings,
 } from "@shopify/ui-extensions-react/checkout";
@@ -16,10 +16,10 @@ export default reactExtension("purchase.checkout.block.render", () => (
 ));
 
 function FreeShippingBar() {
-  const totalAmount = useTotalAmount();
+  const subtotalAmount = useSubtotalAmount();
   const settings = useSettings();
   const FREE_SHIPPING_THRESHOLD = parseFloat(settings.shipping_threshold) || 100;
-  const currentTotal = parseFloat(totalAmount?.amount || 0);
+  const currentTotal = parseFloat(subtotalAmount?.amount || 0);
   const remaining = Math.max(0, FREE_SHIPPING_THRESHOLD - currentTotal);
   const progress = Math.min((currentTotal / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const isEligible = remaining === 0;
