@@ -24,8 +24,12 @@ function FreeShippingBar() {
   const progress = Math.min((currentTotal / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const isEligible = remaining === 0;
   const message = isEligible
-    ? "You’ve got FREE shipping! (U.S. Only)"
+    ? "Congrats! This order qualifies for free shipping."
     : `You're $${remaining.toFixed(2)} away from getting free shipping`;
+  const title = isEligible
+    ? "Free Shipping Unlocked!"
+    : "Unlock Free Shipping";
+
 
   return (
     <Grid
@@ -44,7 +48,7 @@ function FreeShippingBar() {
       </View>
       <BlockStack spacing="tight">
         <View spacing="tight">
-          <Heading level={2} size="small">FREE SHIPPING</Heading>
+          <Heading level={2} size="small">{title}</Heading>
           <Text emphasis="italic" size="small">{message}</Text>
         </View>
         <Progress
