@@ -44,7 +44,7 @@ function Extension() {
     setIsLoading(true);
     try {
       const { data } = await query(`{
-        node(id: "${SHIPPING_PROTECTION_VARIANT_ID}") {
+        node(id: "${settings.pack_protection_product}") {
           ... on ProductVariant {
             id
             title
