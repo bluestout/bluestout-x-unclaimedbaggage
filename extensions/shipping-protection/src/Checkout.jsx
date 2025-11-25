@@ -81,8 +81,8 @@ function Extension() {
         quantity: 1,
         attributes: [
           {
-            key: "",
-            value: "Protect your order from damage, loss, or theft"
+            key: "Protect your order from",
+            value: "damage, loss, or theft"
           }
         ]
       });
