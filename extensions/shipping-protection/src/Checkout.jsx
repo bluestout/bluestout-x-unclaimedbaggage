@@ -35,6 +35,7 @@ function Extension() {
   useEffect(() => {
     if (!isInCart) {
       fetchProductData();
+      setIsAdded(false);
     } else {
       setIsLoading(false);
     }
@@ -77,7 +78,13 @@ function Extension() {
       await applyCartLineChange({
         type: "addCartLine",
         merchandiseId: product.id,
-        quantity: 1
+        quantity: 1,
+        attributes: [
+          {
+            key: "",
+            value: "Protect your order from damage, loss, or theft"
+          }
+        ]
       });
       setIsAdded(true);
     } catch (error) {
