@@ -11,7 +11,8 @@ import {
   useSettings,
   Image,
   View,
-  Button
+  Button,
+  Link
 } from "@shopify/ui-extensions-react/checkout";
 import { useEffect, useState } from "react";
 
@@ -131,7 +132,6 @@ function Extension() {
   return (
     <View
       cornerRadius="base"
-      padding="extraTight"
       backgroundColor="base"
     >
       <InlineLayout
@@ -141,20 +141,20 @@ function Extension() {
       >
         {/* Icon Section */}
         <View
-          padding="extraTight"
+          padding="tight"
           cornerRadius="small"
           backgroundColor="subdued"
         >
-          <Image source="https://cdn.shopify.com/s/files/1/0259/9469/0645/files/Group_912_030ab33c-69ee-4f0b-861b-5ef11fa55689.png?v=1764010492&width=60" fit="contain" />
+          <Image source="https://cdn.shopify.com/s/files/1/0259/9469/0645/files/Group_912_030ab33c-69ee-4f0b-861b-5ef11fa55689.png?v=1764010492&width=75" fit="contain" />
         </View>
 
         {/* Content Section */}
         <BlockStack spacing="extraTight">
-          <Text size="medium" emphasis="bold">
+          <Text size="medium">
             Shipping Protection
           </Text>
-          <Text size="small" appearance="subdued">
-            Protect your order from damage, loss, or theft
+          <Text size="small" >
+            <Text appearance="subdued">Protect your order from: damage, loss, or theft &nbsp;</Text><Link to="https://unclaimedbaggage.com/policies/shipping-policy" external >Learn more</Link>
           </Text>
           <Text size="small" emphasis="bold">
             {formattedPrice}
