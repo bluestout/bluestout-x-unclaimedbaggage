@@ -79,13 +79,7 @@ function Extension() {
       await applyCartLineChange({
         type: "addCartLine",
         merchandiseId: product.id,
-        quantity: 1,
-        attributes: [
-          {
-            key: "Protect your order from",
-            value: "damage, loss, or theft"
-          }
-        ]
+        quantity: 1
       });
       setIsAdded(true);
     } catch (error) {
@@ -154,7 +148,7 @@ function Extension() {
             Shipping Protection
           </Text>
           <Text size="small" >
-            <Text appearance="subdued">Protect your order from: damage, loss, or theft &nbsp;</Text><Link to="https://unclaimedbaggage.com/policies/shipping-policy" external >Learn more</Link>
+            <Text appearance="subdued">Protect your order from damage, loss, or theft &nbsp;</Text><Link to="https://unclaimedbaggage.com/policies/shipping-policy" external >Learn more</Link>
           </Text>
           <Text size="small" emphasis="bold">
             {formattedPrice}
