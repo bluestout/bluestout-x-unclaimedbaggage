@@ -36,17 +36,10 @@ function Extension() {
 
   return (
     <View>
-      <TextBlock><Text appearance="subdued" size="small">Protect your order from: damage, loss,&nbsp;</Text>
-        <TextBlock>
-          <Text appearance="subdued" size="small">or theft&nbsp;
-          </Text>
-          <Text size="small">
-            <Link appearance="accent" size="small" to="https://unclaimedbaggage.com/policies/shipping-policy" external >Learn more</Link>
-          </Text>
-        </TextBlock>
+      <TextBlock><Text appearance="subdued" size="small">Protect your order from damage, loss, or theft </Text>
       </TextBlock>
       <Text size="small">
-        <Link appearance="accent" onPress={handleRemove}>Cancel</Link>
+        <Link appearance="accent" onPress={handleRemove}>Remove</Link>
       </Text>
     </View>
   )
