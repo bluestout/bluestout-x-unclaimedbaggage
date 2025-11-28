@@ -135,7 +135,6 @@ function Extension() {
       >
         {/* Icon Section */}
         <View
-          padding="tight"
           cornerRadius="small"
           backgroundColor="subdued"
         >
