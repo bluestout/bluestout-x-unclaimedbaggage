@@ -12,7 +12,7 @@ import {
   Image,
   View,
   Button,
-  Link
+  Link,
 } from "@shopify/ui-extensions-react/checkout";
 import { useEffect, useState } from "react";
 
@@ -147,7 +147,7 @@ function Extension() {
             Shipping Protection
           </Text>
           <Text size="small" >
-            <Text appearance="subdued">Protect your order from damage, loss, or theft &nbsp;</Text><Link to="https://unclaimedbaggage.com/policies/shipping-policy" external >Learn more</Link>
+            <Text appearance="subdued">Protect your order from damage, loss, or theft </Text><Link to="https://unclaimedbaggage.com/policies/shipping-policy" external >Learn more</Link>
           </Text>
           <Text size="small" emphasis="bold">
             {formattedPrice}
