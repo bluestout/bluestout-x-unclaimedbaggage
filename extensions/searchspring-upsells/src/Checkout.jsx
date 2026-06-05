@@ -6,7 +6,6 @@ import {
   InlineLayout,
   useCartLines,
   useApplyCartLinesChange,
-  useAttributes,
   SkeletonImage,
   SkeletonTextBlock,
   Image,
@@ -27,9 +26,6 @@ function Extension() {
   const { query } = useApi();
   const cartLines = useCartLines();
   const applyCartLinesChange = useApplyCartLinesChange();
-  const attributes = useAttributes();
-  const upsellEnabled = attributes?.some((attr) => attr.key === 'ss_upsell' && attr.value === 'true');
-  if (!upsellEnabled) return null;
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [addingId, setAddingId] = useState(null);
