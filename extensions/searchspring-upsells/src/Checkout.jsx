@@ -11,6 +11,7 @@ import {
   Image,
   View,
   Button,
+  Link,
 } from "@shopify/ui-extensions-react/checkout";
 import { useEffect, useState } from "react";
 
@@ -69,6 +70,8 @@ function Extension() {
           `query GetProduct($handle: String!) {
             product(handle: $handle) {
               title
+              vendor
+              onlineStoreUrl
               featuredImage { url altText }
               priceRange { minVariantPrice { amount currencyCode } }
               variants(first: 1) {
@@ -89,6 +92,8 @@ function Extension() {
         return {
           variantId: variantEdge.node.id,
           title: p.title,
+          vendor: p.vendor,
+          url: p.onlineStoreUrl ?? item.mappings?.core?.url,
           imageUrl: p.featuredImage?.url ?? item.mappings?.core?.imageUrl,
           imageAlt: p.featuredImage?.altText ?? p.title,
           price: parseFloat(p.priceRange.minVariantPrice.amount),
@@ -165,14 +170,20 @@ function UpsellCard({ product, onAdd, adding }) {
         spacing="base"
         columns={["auto", "fill", "auto"]}
       >
-        
+        <Link to={product.url} external={true}>
           <View cornerRadius="base" maxInlineSize={75} maxBlockSize={75} overflow="hidden">
             {product.imageUrl && (
               <Image source={product.imageUrl} accessibilityDescription={product.imageAlt} fit="cover"/>
             )}
           </View>
+        </Link>
         <BlockStack spacing="extraTight">
-          <Text size="medium">{product.title}</Text>
+          <Link to={product.url} external={true} appearance="monochrome">
+            <Text size="medium">{product.title}</Text>
+          </Link>
+          {product.vendor && (
+            <Text size="small" appearance="subdued">{product.vendor}</Text>
+          )}
           <Text size="small" emphasis="bold">{formattedPrice}</Text>
         </BlockStack>
         <Button
