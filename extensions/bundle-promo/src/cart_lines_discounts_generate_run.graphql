@@ -1,0 +1,28 @@
+query CartInput {
+  cart {
+    lines {
+      id
+      quantity
+      cost {
+        amountPerQuantity {
+          amount
+        }
+        subtotalAmount {
+          amount
+        }
+      }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            inClearanceBundle: inAnyCollection(ids: ["gid://shopify/Collection/706753888625"])
+          }
+        }
+      }
+    }
+  }
+  discount {
+    discountClasses
+  }
+}
