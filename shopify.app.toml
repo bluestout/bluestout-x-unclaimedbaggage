@@ -2,8 +2,8 @@
 
 client_id = "08547edb9632fe0bee3c38a141c1875c"
 name = "bluestout-x-unclaimedbaggage"
-application_url = "https://shopify.dev/apps/default-app-home"
-embedded = true
+application_url = "https://localhost/new-install"
+embedded = false
 
 [build]
 automatically_update_urls_on_dev = true
@@ -13,7 +13,7 @@ api_version = "2026-01"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = ""
+scopes = "read_price_rules,write_price_rules,read_discounts,write_discounts,read_discounts_allocator_functions,write_discounts_allocator_functions,read_products"
 
 [auth]
-redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+redirect_urls = [ "http://localhost" ]

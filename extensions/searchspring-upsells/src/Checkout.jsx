@@ -173,17 +173,23 @@ function UpsellCard({ product, onAdd, adding }) {
         <Link to={product.url} external={true}>
           <View cornerRadius="base" maxInlineSize={75} maxBlockSize={75} overflow="hidden">
             {product.imageUrl && (
-              <Image source={product.imageUrl} accessibilityDescription={product.imageAlt} fit="cover"/>
+              <Image source={product.imageUrl} accessibilityDescription={product.imageAlt} fit="cover" />
             )}
           </View>
         </Link>
-        <BlockStack spacing="extraTight">
-          <Link to={product.url} external={true} appearance="monochrome">
-            <Text size="medium">{product.title}</Text>
-          </Link>
-          {product.vendor && (
-            <Text size="small" appearance="subdued">{product.vendor}</Text>
-          )}
+        <BlockStack spacing="tight">
+          <BlockStack spacing="none">
+            {product.vendor && (
+              <View>
+                <Text size="small" appearance="subdued">{product.vendor}</Text>
+              </View>
+            )}
+            <View>
+              <Link to={product.url} external={true} appearance="monochrome">
+                <Text size="medium">{product.title}</Text>
+              </Link>
+            </View>
+          </BlockStack>
           <Text size="small" emphasis="bold">{formattedPrice}</Text>
         </BlockStack>
         <Button

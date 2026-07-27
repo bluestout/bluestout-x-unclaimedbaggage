@@ -16,7 +16,7 @@ query CartInput {
         ... on ProductVariant {
           id
           product {
-            inClearanceBundle: inAnyCollection(ids: ["gid://shopify/Collection/706753888625"])
+            inClearanceBundle: inAnyCollection(ids: ["gid://shopify/Collection/304783392853"])
           }
         }
       }
